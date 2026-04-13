@@ -13,3 +13,8 @@ pip install nightagent
 > secret: 
 ```
 
+## usage (in uvx)
+If you have [uv](https://docs.astral.sh/uv/) installed, you can skip the install step and go straight to usage with:
+```sh
+uvx nightagent monitor
+```
