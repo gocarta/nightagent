@@ -16,9 +16,9 @@ setup(
         ]
     },
     entry_points={
-        'console_scripts': ['nightagent=nightagent.__init__:main'],
-    },    
-    version="0.0.0",
+        "console_scripts": ["nightagent=nightagent.__init__:main"],
+    },
+    version="0.1.0",
     description="Automatically Detect and Repair Common Firewall Issues",
     long_description=long_description,
     long_description_content_type="text/markdown",
