@@ -125,8 +125,6 @@ class NightAgent:
 
         output = self._run_command_on_firewall("show vpn-sessiondb detail l2l")
 
-        # print(output)
-
         # match_ikev2 = re.search(f"IKEv2 Tunnels: ([0-9]+)", output)
         # if not match_ikev2:
         #     print(f"[WARN] Could not find number of IKEv2 tunnels")
@@ -279,18 +277,18 @@ class NightAgent:
                     # trim tunnel stats length
                     self.history[tunnel_id][REKEY_LEFT_D] = self.history[tunnel_id][
                         REKEY_LEFT_D
-                    ][:HISTORY_LENGTH]
+                    ][-1 * HISTORY_LENGTH :]
                     self.history[tunnel_id][BYTES_TX] = self.history[tunnel_id][
                         BYTES_TX
-                    ][:HISTORY_LENGTH]
+                    ][-1 * HISTORY_LENGTH :]
                     self.history[tunnel_id][PKTS_TX] = self.history[tunnel_id][PKTS_TX][
-                        :HISTORY_LENGTH
+                        -1 * HISTORY_LENGTH :
                     ]
                     self.history[tunnel_id][BYTES_RX] = self.history[tunnel_id][
                         BYTES_RX
-                    ][:HISTORY_LENGTH]
+                    ][-1 * HISTORY_LENGTH :]
                     self.history[tunnel_id][PKTS_RX] = self.history[tunnel_id][PKTS_RX][
-                        :HISTORY_LENGTH
+                        -1 * HISTORY_LENGTH :
                     ]
 
                 # check if any tunnels are not passing traffic
